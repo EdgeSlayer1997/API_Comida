@@ -1,0 +1,19 @@
+{
+  "name": "api_mongo",
+  "version": "1.0.0",
+  "description": "API consumible conectada a MONGODB",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "start": "node app.js"
+  },
+  "author": "Luis Salvador Delgado Romo",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "mongoose": "^8.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.3"
+  }
+}
