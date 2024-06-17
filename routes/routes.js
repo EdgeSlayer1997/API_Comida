@@ -1,10 +1,8 @@
 const express = require('express');
-const Router = express.Router();
+const router = express.Router();
 
-const verMenu = Router.get("/", (req, res) => {
-    return res.json({mensaje: "Sin cargo, sin comida"});
-})
+router.get("/", (req, res) => {
+    return res.json({ mensaje: "Sin cargo, sin comida" });
+});
 
-module.exports = {
-    verMenu
-}
+module.exports = router;
