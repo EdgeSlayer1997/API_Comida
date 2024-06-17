@@ -2,7 +2,7 @@
   "name": "api_mongo",
   "version": "1.0.0",
   "description": "API consumible conectada a MONGODB",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "dev": "nodemon app.js",
     "start": "node app.js"
@@ -11,7 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.19.2",
-    "mongoose": "^8.4.1"
+    "mongoose": "^8.4.1",
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.3"

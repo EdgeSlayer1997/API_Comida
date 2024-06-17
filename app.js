@@ -1,11 +1,20 @@
-const express = require('express');
-const app = express();
-const port = 3000;
+const express=require('express'); //Importa express.
+const app = express(); //Manda a llamar a express
+const port=4000; //Maneja el puerto
+const comidaRouter = require('./routes/comidaRouter'); //Llama al archivo de rutas
 
-app.get("/", (req, res) => {
-    res.json({mensaje: "Aplicación corriendo correctamente"});
-})
+app.use(express.urlencoded({extended:false}));
+app.use(express.json);
 
-app.listen(port, () => {
-    console.log("Aplicación corriendo en el puerto: ", port);
+app.use(morgan('dev'));//Configura morgan para su uso unicamente en desarrollo
+
+app.use('/API', comidaRouter);
+
+app.use((req, res) => {
+    console.log('End Point no encontrado')
+    res.status(404).json({ mensaje: 'Ruta no encontrada'});
+});
+
+app.listen(port, () => {//el app listen ayuda a escuchar el puerto
+    console.log('Listening on port '+port+' wiiiiiiiiii si jaleishon');//se envia un mensaje a la consola para saber que se está usando el puerto
 });
